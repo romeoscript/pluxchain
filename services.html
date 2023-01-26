@@ -21,12 +21,20 @@
     <link rel="stylesheet" href="home/css/magnific-popup.min.css">
     <link rel="stylesheet" href="home/css/style.css">
     <link rel="stylesheet" href="home/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>About Us - PluxChain</title>
     <meta name="description" content="">
 <style>
+    .timee{
+        z-index: 20;
+        color: black;
+        font-size: 25px;
+        cursor: pointer;
+    }
     .panel{
     /* height: 300px !important; */
+
     position: fixed;
     left: 50%;
     top: 50%;
@@ -41,7 +49,6 @@
 
 }
     .file {
-    
     min-height: 300px!important;
     display: block!important;
     transition:all .5s linear;
@@ -159,6 +166,7 @@
                                                         <button class="btn btn-primary accordy" id="12">Read more</button>
                     </div>
                     <div class="panel" id="1">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -186,6 +194,7 @@
                                                         <button class="btn btn-primary accordy" id="2">Read more</button>
                     </div>
                     <div class="panel" id="2">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -212,6 +221,7 @@
                                                         <button class="btn btn-primary accordy" id="3">Read more</button>
                     </div>
                     <div class="panel" id="3">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -238,6 +248,7 @@
                             <button class="btn btn-primary accordy" id="4">Read more</button>
                     </div>
                     <div class="panel" id="4">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -264,6 +275,7 @@
                             <button class="btn btn-primary accordy" id="5">Read more</button>
                     </div>
                     <div class="panel" id="5">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -291,6 +303,7 @@
                                                     <button class="btn btn-primary accordy" id="6">Read more</button>
                     </div>
                     <div class="panel" id="6">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -316,6 +329,7 @@
                             <button class="btn btn-primary accordy" id="7">Read more</button>
                     </div>
                     <div class="panel" id="7">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -345,6 +359,7 @@
                                                     <button class="btn btn-primary accordy" id="8">Read more</button>
                     </div>
                     <div class="panel" id="8">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -372,6 +387,7 @@
                            <button class="btn btn-primary accordy" id="9">Read more</button>
                     </div>
                     <div class="panel" id="9">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -403,6 +419,7 @@
                                                     <button class="btn btn-primary accordy" id="10">Read more</button>
                     </div>
                     <div class="panel" id="10">
+                        <i class="fa fa-times timee" aria-hidden="true"></i>
                         <p class="card-description">
 
                             Courtney Lockett was the Chief
@@ -648,11 +665,17 @@
 
 <div class="go-top"><i class='bx bx-up-arrow-alt'></i></div>
 <script>
+    let times = document.querySelectorAll(".timee")
     let showEl = document.querySelectorAll(".accordy");
         let information = document.querySelectorAll(".panel");
         showEl.forEach((element) => {
             element.addEventListener("click", function(e) {
                 information.forEach((info) => {
+                   times.forEach(time =>{
+                    time.addEventListener('click', function(){
+                        info.classList.remove('file')
+                    })
+                   })
                     if (e.target.id == info.id) {
                         info.classList.toggle("file");
                     } else {
